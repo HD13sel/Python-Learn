@@ -1,0 +1,5 @@
+print('#'*50)
+num = int(input('Digite um numero: '))
+print(f'O numero que você digitou é {num}!')
+print(f'O sucessor de {num} é {num + 1}!')
+print(f'O antecessor de {num} é {num - 1}!')

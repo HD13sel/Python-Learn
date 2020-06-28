@@ -1,0 +1,8 @@
+letra = input('Escreva algo: ')
+print(f'Só tem espaço? {letra.isspace()}')
+print(f'Tem números? {letra.isnumeric()}')
+print(f'É alfabético? {letra.isalpha()}')
+print(f'É alfanumérico? {letra.isalnum()}')
+print(f'Está em maísucula? {letra.isupper()}')
+print(f'Está em minúscula? {letra.islower()}')
+print(f'Está capitalizada? {letra.istitle()}')
