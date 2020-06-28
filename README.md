@@ -1,2 +1,13 @@
 # Python Learn
- Python learning
+
+    ###      ## 
+  ##   ##   ##
+  ##   ##  ##
+   #############
+      ##  ##   ##
+     ##   ##   ##
+    ##      ###   CODE
+
+ Python Learning
+
+ Repositório p/ aprender Python.
