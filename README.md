@@ -1,3 +1,3 @@
 # Python Learn
 
- Repositório p/ aprender Python.
+ Repositório que utilizo p/ aprendizado de Python.
