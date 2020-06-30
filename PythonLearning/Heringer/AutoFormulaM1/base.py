@@ -11,6 +11,20 @@ vão ser de cada batida (bat)
 # O sistema vai receber no máximo 15 produtos (mp) e os pesos respectivos (p), após isso o usuario deverá informar quantas toneladas (ton) são, informar
 qual vai ser o tipo de produto se é volumoso ou não (ure) e também vai informar qual vai ser o peso extra (pext)
 '''
+mplist = list()
+plist = list()
+while True:
+    mp = str(input('Digite o produto: ')).upper()
+    p = int(input('Digite o peso: '))
+    mplist.append(mp)   #Vai adicionar na lista de MPs
+    plist.append(p)  #Vai adicionar na lista de Ps
+    while True:
+        perg = str(input('Quer continuar [s/n]: ')).lower()
+        if perg in 'sn':
+            break
+        print('Erro! Digite apenas [s/n]')
+    if perg == 'n':
+        break
 ton = int(input('Quantas toneladas tem a OC: '))
 ure = str(input('A formula é muito volumosa: [s/n] '))
 pext = int(input('Deseja colocar mais quantos kg: '))
@@ -20,7 +34,7 @@ pext = int(input('Deseja colocar mais quantos kg: '))
 if ure in 'S''s''Sim''sim':    
     for btl in range(1,51):
         bat = (ton + pext)/btl  # Vai pegar as ton e somar com pext e fazer a conversão de quantas batidas vão ser
-        if bat < 8000:
+        if bat < 8200:
             print(f'Vai ser {btl} batidas com o total de {bat:.2f}')
             break                
 else:
