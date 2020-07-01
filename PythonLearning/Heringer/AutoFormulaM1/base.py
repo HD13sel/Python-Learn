@@ -11,13 +11,13 @@ vão ser de cada batida (bat)
 # O sistema vai receber no máximo 15 produtos (mp) e os pesos respectivos (p), após isso o usuario deverá informar quantas toneladas (ton) são, informar
 qual vai ser o tipo de produto se é volumoso ou não (ure) e também vai informar qual vai ser o peso extra (pext)
 '''
-mplist = list()
-plist = list()
+prod = list()
+pes = list()
 while True:
     mp = str(input('Digite o produto: ')).upper()
     p = int(input('Digite o peso: '))
-    mplist.append(mp)   #Vai adicionar na lista de MPs
-    plist.append(p)  #Vai adicionar na lista de Ps
+    prod.append(mp)
+    pes.append(p)
     while True:
         perg = str(input('Quer continuar [s/n]: ')).lower()
         if perg in 'sn':
@@ -25,9 +25,14 @@ while True:
         print('Erro! Digite apenas [s/n]')
     if perg == 'n':
         break
-ton = int(input('Quantas toneladas tem a OC: '))
-ure = str(input('A formula é muito volumosa: [s/n] '))
-pext = int(input('Deseja colocar mais quantos kg: '))
+if sum(pes) == 1000:
+    ton = int(input('Quantas toneladas tem a OC: '))
+    ure = str(input('A formula é muito volumosa: [s/n] '))
+    pext = int(input('Deseja colocar mais quantos kg: '))
+else:
+    print('O peso total da OC não está correto.')
+    exit()
+
 
 # Vai diferenciar se o produto contém muito volume ou não!
 
@@ -37,9 +42,20 @@ if ure in 'S''s''Sim''sim':
         if bat < 8200:
             print(f'Vai ser {btl} batidas com o total de {bat:.2f}')
             break                
+    print('Os produtos vão ficar com esses pesos:')
+    for i, p in enumerate(prod):
+        pn = (pes[i]*bat)/1000
+        print(f'{p} = {pn:.0f}')
+    
 else:
     for btl in range(1,51):
         bat = (ton + pext)/btl
         if bat < 12000:
             print(f'Vai ser {btl} batidas com total de {bat:.2f}')
             break 
+    print('Os produtos vão ficar com esses pesos:')
+    for i, p in enumerate(prod):
+        pn = (pes[i]*bat)/1000
+        print(f'{p} = {pn:.0f}')
+
+
