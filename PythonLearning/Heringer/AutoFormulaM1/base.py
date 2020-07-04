@@ -11,6 +11,7 @@ vão ser de cada batida (bat)
 # O sistema vai receber no máximo 15 produtos (mp) e os pesos respectivos (p), após isso o usuario deverá informar quantas toneladas (ton) são, informar
 qual vai ser o tipo de produto se é volumoso ou não (ure) e também vai informar qual vai ser o peso extra (pext)
 '''
+
 prod = list()
 pes = list()
 while True:
@@ -39,7 +40,7 @@ else:
 if ure in 'S''s''Sim''sim':    
     for btl in range(1,51):
         bat = (ton + pext)/btl  # Vai pegar as ton e somar com pext e fazer a conversão de quantas batidas vão ser
-        if bat < 8200:
+        if bat < 9000:
             print(f'Vai ser {btl} batidas com o total de {bat:.2f}')
             break                
     print('Os produtos vão ficar com esses pesos:')
