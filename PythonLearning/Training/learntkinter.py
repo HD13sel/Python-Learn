@@ -2,27 +2,50 @@ from tkinter import *
 
 
 class MyApp:
-    def __init__(self, myParent):
-        self.container1 = Frame(myParent)
+    def __init__(self, parent):
+        self.myParent = parent
+        self.container1 = Frame(parent)
         self.container1.pack()
+        self.button1 = Button(self.container1,
+                              command=self.button1Click)
+        self.button1.bind('<Return>', self.button1Click_a)
+        self.button1.configure(text='OK', background='green')
+        self.button1.pack(side=LEFT)
+        self.button1.focus_force()
 
-        self.botao1 = Button(self.container1)
-        self.botao1['text'] = 'Hello World!'
-        self.botao1['background'] = 'gray'
-        self.botao1.pack()
+        self.button2 = Button(self.container1,
+                              command=self.button2Click)
+        self.button2.bind('<Return>', self.button2Click_a)
+        self.button2.configure(text="Cancel", background='red')
+        self.button2.pack(side=RIGHT)
 
-        self.button2 = Button(self.container1)
-        self.button2.configure(text="Off to join the circus!")
-        self.button2.configure(background="tan")
-        self.button2.pack()
+    def button1Click(self):
+        print('button1Click event handler')
+        if self.button1['background'] == 'green':
+            self.button1['background'] = 'yellow'
+        else:
+            self.button1['background'] = 'green'
 
-        self.button3 = Button(self.container1)
-        self.button3.configure(text="Join me?", background="cyan")
-        self.button3.pack()
+    def button2Click(self):
+        print('button2Click event handler')
+        self.myParent.destroy()
 
-        self.button4 = Button(self.container1, text="Goodbye!",
-                              background="red")
-        self.button4.pack()
+    def button1Click_a(self, event):
+        print('button1Click_a event handler (a wrapper)')
+        self.button1Click()
+
+    def button2Click_a(self, event):
+        print('button2Click_a event handler (a wrapper)')
+        self.button2Click()
+# def report_event(event):
+#     """Imprime a descrição de um evento, baseado em seus atributos.
+#     """
+#     event_name = {'2': 'KeyPress', '4': 'ButtonPress'}
+#     print(f'Time {str(event.time)}')
+#     print(f'EventType: {str(event.type)}')
+#     print(event_name[str(event.type)])
+#     print(f'EventWidgetID: {str(event.widget)}')
+#     print(f'EventKeySimbol: {str(event.keysym)}')
 
 
 root = Tk()
