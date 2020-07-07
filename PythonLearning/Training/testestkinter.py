@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-
+produtos = list()
 
 class MenuFormula:
     def __init__(self, master=None):
@@ -18,8 +18,8 @@ class MenuFormula:
         self.label1.config(text='Produto 1:  ')
         self.label1.pack(side='left')
         # ENTRY 1
-        self.prod1 = ttk.Entry(self.produto1)
-        self.prod1.pack(side='left')
+        self.entryprod1 = ttk.Entry(self.produto1, textvariable=prod1)
+        self.entryprod1.pack(side='left')
         # FINALIZANDO FRAME 1
         self.produto1.config(height='200', width='200')
         self.produto1.pack(side='top')
@@ -143,10 +143,9 @@ class MenuFormula:
 
         self.mainwindow = self.menu
 
-    def lerValores(self):
-        prodlist = list()
-        prodlist.append(self.prod1)
-        
+    def addTolist(self):
+        entries.append(varEntry)
+
 
     def run(self):
         self.mainwindow.mainloop()
