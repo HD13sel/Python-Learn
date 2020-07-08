@@ -538,7 +538,7 @@ class MenuFormula:
 
         # Main widget
         self.mainwindow = self.menu
-    def lercadastro(self):
+    def pegarvalores(self):
         pass
 
     def run(self):
