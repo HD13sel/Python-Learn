@@ -21,17 +21,17 @@ myprods = []
 mypesos = []
 
 
-for i in range(0, 21, 2):
-    labelprod = Label(janela, text=f'Produto {i/2:.0f}:')
+for i in range(1, 21, 2):
+    labelprod = Label(janela, text=f'Produto {(i/2)-1:.0f}:')
     labelprod.grid(row=i, column=0, pady=1)
     labelpeso = Label(janela, text='Peso:')
     labelpeso.grid(row=i+1, column=0, pady=1)
-    entryprod = Entry(janela)
-    entryprod.grid(row=i, column=1, pady=1, padx=5)
+    if i == 0:
+        prod1 = Entry(janela)
+        prod1.grid(row=i, column=1, pady=1, padx=5)
     entrypeso = Entry(janela)
     entrypeso.grid(row=i+1, column=1, pady=1, padx=5)
-    myprods.append(entryprod.get())
-    mypesos.append(entrypeso.get())
+
 
 botao = Button(janela, text="Salvar!", command=command)
 botao.grid(row=30, column=1, ipadx=5, ipady=5)
