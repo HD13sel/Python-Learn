@@ -1,4 +1,5 @@
 from tkinter import *
+
 listaproduto = []
 listapeso = []
 
@@ -82,7 +83,9 @@ def command():
     somaentry.insert(0, sum(listapeso))
 
 
+# Parte do Calculo
 def calculo():
+    # Checando qual volume vai ser
     volume = 12000
     if chok.get() is True:
         volume = 9000
@@ -100,11 +103,11 @@ def calculo():
     rprod9.insert(0, prod9.get())
     rprod10.insert(0, prod10.get())
 
-    tons = int(ton.get())*1000
+    tons = int(ton.get()) * 1000
     pextra = int(pesextra.get())
     ptotbat = 0
     for btl in range(1, 51):
-        batid = (tons + pextra)/btl
+        batid = (tons + pextra) / btl
         if batid < volume:
             ptotbat = int(batid)
             bat.delete(0, END)
@@ -116,7 +119,7 @@ def calculo():
             break
     for c, v in enumerate(listapeso):
         if c == 0:
-            peso1final = v * ptotbat/1000
+            peso1final = v * ptotbat / 1000
             peso1int = int(peso1final)
             rpes1.insert(0, peso1int)
         elif c == 1:
@@ -157,16 +160,20 @@ def calculo():
             rpes10.insert(0, peso10int)
 
 
+def limpar():
+    pass
+
+
 janela = Tk()
 xx = 30
 yy = 20
 
-
 myprods = []
 mypesos = []
 
-
+# Parte de Cadastro de Produtos
 for i in range(0, 19, 2):
+    # Criando Label 1 (Produto 1 e Peso 1)
     if i == 0:
         labelprod1 = Label(janela, text='Produto 1:')
         labelprod1.grid(row=i, column=0, pady=1)
@@ -176,7 +183,7 @@ for i in range(0, 19, 2):
         labelpeso1.grid(row=i + 1, column=0, pady=1)
         pes1 = Entry(janela)
         pes1.grid(row=i + 1, column=1, pady=1, padx=5)
-
+    # Criando Label 2 (Produto 2 e Peso 2)
     elif i == 2:
         labelprod2 = Label(janela, text='Produto 2:')
         labelprod2.grid(row=i, column=0, pady=1)
@@ -186,6 +193,7 @@ for i in range(0, 19, 2):
         labelpeso2.grid(row=i + 1, column=0, pady=1)
         pes2 = Entry(janela)
         pes2.grid(row=i + 1, column=1, pady=1, padx=5)
+    # Criando Label 3 (Produto 3 e Peso 3)
     elif i == 4:
         labelprod3 = Label(janela, text='Produto 3:')
         labelprod3.grid(row=i, column=0, pady=1)
@@ -195,6 +203,7 @@ for i in range(0, 19, 2):
         labelpeso3.grid(row=i + 1, column=0, pady=1)
         pes3 = Entry(janela)
         pes3.grid(row=i + 1, column=1, pady=1, padx=5)
+    # Criando Label 4 (Produto 4 e Peso 4)
     elif i == 6:
         labelprod4 = Label(janela, text='Produto 4:')
         labelprod4.grid(row=i, column=0, pady=1)
@@ -204,6 +213,7 @@ for i in range(0, 19, 2):
         labelpeso4.grid(row=i + 1, column=0, pady=1)
         pes4 = Entry(janela)
         pes4.grid(row=i + 1, column=1, pady=1, padx=5)
+    # Criando Label 5 (Produto 5 e Peso 5)
     elif i == 8:
         labelprod5 = Label(janela, text='Produto 5:')
         labelprod5.grid(row=i, column=0, pady=1)
@@ -213,6 +223,7 @@ for i in range(0, 19, 2):
         labelpeso5.grid(row=i + 1, column=0, pady=1)
         pes5 = Entry(janela)
         pes5.grid(row=i + 1, column=1, pady=1, padx=5)
+    # Criando Label 6 (Produto 6 e Peso 6)
     elif i == 10:
         labelprod6 = Label(janela, text='Produto 6:')
         labelprod6.grid(row=i, column=0, pady=1)
@@ -222,6 +233,7 @@ for i in range(0, 19, 2):
         labelpeso6.grid(row=i + 1, column=0, pady=1)
         pes6 = Entry(janela)
         pes6.grid(row=i + 1, column=1, pady=1, padx=5)
+    # Criando Label 7 (Produto 7 e Peso 7)
     elif i == 12:
         labelprod7 = Label(janela, text='Produto 7:')
         labelprod7.grid(row=i, column=0, pady=1)
@@ -231,6 +243,7 @@ for i in range(0, 19, 2):
         labelpeso7.grid(row=i + 1, column=0, pady=1)
         pes7 = Entry(janela)
         pes7.grid(row=i + 1, column=1, pady=1, padx=5)
+    # Criando Label 8 (Produto 8 e Peso 8)
     elif i == 14:
         labelprod8 = Label(janela, text='Produto 8:')
         labelprod8.grid(row=i, column=0, pady=1)
@@ -240,6 +253,7 @@ for i in range(0, 19, 2):
         labelpeso8.grid(row=i + 1, column=0, pady=1)
         pes8 = Entry(janela)
         pes8.grid(row=i + 1, column=1, pady=1, padx=5)
+    # Criando Label 9 (Produto 9 e Peso 9)
     elif i == 16:
         labelprod9 = Label(janela, text='Produto 9:')
         labelprod9.grid(row=i, column=0, pady=1)
@@ -249,6 +263,7 @@ for i in range(0, 19, 2):
         labelpeso9.grid(row=i + 1, column=0, pady=1)
         pes9 = Entry(janela)
         pes9.grid(row=i + 1, column=1, pady=1, padx=5)
+    # Criando Label 10 (Produto 10 e Peso 10)
     elif i == 18:
         labelprod10 = Label(janela, text='Produto 10:')
         labelprod10.grid(row=i, column=0, pady=1)
@@ -259,11 +274,13 @@ for i in range(0, 19, 2):
         pes10 = Entry(janela)
         pes10.grid(row=i + 1, column=1, pady=1, padx=5)
 
+# Botao Salvar os Produtos Cadastrados
 labelnone1 = Label(janela)
 labelnone1.grid(row=20, column=0, padx=1, pady=2)
 botao = Button(janela, text="Salvar!", command=command)
 botao.grid(row=21, column=1, ipadx=10, ipady=2)
 
+# Parte da Soma dos Produtos Cadastrados
 labelnone2 = Label(janela)
 labelnone2.grid(row=23, column=0, padx=1, pady=2)
 somalabel = Label(janela, text='SOMA:')
@@ -271,6 +288,7 @@ somalabel.grid(row=25, column=0)
 somaentry = Entry(janela)
 somaentry.grid(row=25, column=1)
 
+# Parte de Toneladas
 labelnone3 = Label(janela)
 labelnone3.grid(row=1, column=2, padx=20, pady=1)
 labeltonelada = Label(janela, text='Toneladas: (Ex: 32)')
@@ -278,6 +296,7 @@ labeltonelada.grid(row=1, column=10, pady=2)
 ton = Entry(janela)
 ton.grid(row=3, column=10, pady=1, padx=5)
 
+# Parte de Volumes
 labelvolume = Label(janela, text='Volume: (Uréia/Nitrogenado)')
 labelvolume.grid(row=5, column=10, pady=2)
 chok = BooleanVar()
@@ -291,14 +310,23 @@ cbyes.grid(row=6, column=10, pady=1, padx=1)
 cbno = Checkbutton(janela, text='Não', var=chno)
 cbno.grid(row=7, column=10, pady=1, padx=1)
 
+# Parte Peso Extra
 labelpextra = Label(janela, text='Peso Extra:')
 labelpextra.grid(row=10, column=10, pady=1, padx=1)
 pesextra = Entry(janela)
 pesextra.grid(row=11, column=10, pady=1, padx=5)
 
+# Botao Principal
 botaoprincipal = Button(janela, text='PRONTO!', command=calculo, height=0, width=10)
 botaoprincipal.grid(row=15, column=10, pady=0, padx=1)
 
+# Botao Limpar
+botaolimpar = Button(janela, text='LIMPAR!', command=limpar(), heigh=0, width=10)
+botaolimpar.grid(row=19, column=10, pady=0, padx=1)
+
+# Parte de Resultados Produtos
+
+# Labels de Produto e Peso
 labelnone4 = Label(janela)
 labelnone4.grid(row=0, column=20, padx=50, pady=1)
 labelidprod = Label(janela, text='Produto')
@@ -306,6 +334,7 @@ labelidprod.grid(row=0, column=25, pady=1, padx=1)
 labelidpeso = Label(janela, text='Peso')
 labelidpeso.grid(row=0, column=26, pady=1, padx=1)
 
+# Parte de criação de Entrys dos Resultados de Produto e Peso
 for i in range(1, 21, 2):
     if i == 1:
         rprod1 = Entry(janela)
@@ -367,6 +396,7 @@ for i in range(1, 21, 2):
         rpes10 = Entry(janela)
         rpes10.grid(row=i, column=26, pady=1, padx=5)
 
+# Parte de Resultado de Batidas
 labelnone5 = Label(janela)
 labelnone5.grid(row=20, column=25, padx=1, pady=1)
 batlabel = Label(janela, text='Batidas:')
@@ -374,6 +404,7 @@ batlabel.grid(row=23, column=25, pady=1, padx=1)
 bat = Entry(janela)
 bat.grid(row=25, column=25, pady=1, padx=1)
 
+# Parte de Peso Total
 labelnone6 = Label(janela)
 labelnone6.grid(row=20, column=26, padx=1, pady=1)
 ptotlabel = Label(janela, text='Peso Total:')
@@ -381,7 +412,7 @@ ptotlabel.grid(row=23, column=26, pady=1, padx=1)
 ptot = Entry(janela)
 ptot.grid(row=25, column=26, pady=1, padx=1)
 
-
+# Especificação da Janela
 janela.geometry('800x600+500+500')
 janela.title('Auto Fomula M1')
 janela.mainloop()
